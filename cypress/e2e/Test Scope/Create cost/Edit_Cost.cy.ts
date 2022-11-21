@@ -253,8 +253,7 @@ describe('Edit Cost Test', () => {
         it('Creat cost feature', () => {
             edit_cost.Login()
             Addcost.clickAdd()
-            cy.get('.ant-picker-input > input').click();
-            cy.get('.ant-picker-header-super-next-btn').click();
+            Addcost.clicknextyear()
             Addcost.enterMonth('Jan')
             Addcost.enterCategory('Tech Cost')
             Addcost.enterSubcategory('Platform')

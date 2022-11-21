@@ -4,11 +4,15 @@ let selectProject_button = '.ant-modal-body > .flex-col > :nth-child(2)'
 let createincomeMenu_button = '[data-menu-id$=cost-management]'
 let add1_button = '//*[@id="control-hooks"]/div/div[8]/button' //xpath
 let submit_button = '.mt-2 > .flex > .ant-btn'
-let add_button = '.ant-btn'
+let view1_button = ':nth-child(4) > :nth-child(2) > span'
+let add_button = '.flex > .ant-btn > span'
 let Add_button = '.flex > .ml-2 > span'
-let delete_button = '.ml-2 > .ant-image > .ant-image-img'
+let submitcopy_button = '.text-xl > .ant-btn > span'
+let delete_button = ':nth-child(1) > :nth-child(8) > .ml-2 > .ant-image > .ant-image-img'
 let confirmdrlete = '.ant-btn-dangerous'
-let selectMonth_textbox = '.ant-picker-input > input'
+let next_year = '.ant-picker-header-super-next-btn'
+let selectMonth_textbox = ':nth-child(1) > .flex > .pl-4 > .ant-picker > .ant-picker-input > input'
+let selectMonth_copy = ':nth-child(4) > .flex > .text-xl > .ant-picker > .ant-picker-input > input'
 let category_textbox = '#control-hooks_category'
 let subcategory_textbox = '#control-hooks_subCategory'
 let type_textbox = '#control-hooks_type'
@@ -56,6 +60,9 @@ let validateFail_Month = '.go2072408551'
 let validateSuccess = '.go2072408551'
 let Validate_AmountThb = 'tbody > :nth-child(1) > :nth-child(7) > div'
 let Validate_Amount = 'tbody > :nth-child(1) > :nth-child(5) > div'
+let Validatetext_subcategory ='.mt-7 > :nth-child(1) > :nth-child(2) > :nth-child(1)'
+let Validatetext_amountthb1 = '.mt-7 > :nth-child(1) > .flex > .font-semibold'
+let Validatetext_amountthb2 = '.text-green'
 
 //Validate Element
 let Validate_category = '.w-full > tbody > :nth-child(1) > :nth-child(1) > div'
@@ -105,6 +112,10 @@ export class AddCost {
     clickSubmit() {
         cy.get(submit_button).click()
     }
+
+    clickview1() {
+        cy.get(view1_button).click()
+    }
     clickAddbutton1() {
         cy.get(add_button).click()
     }
@@ -114,7 +125,10 @@ export class AddCost {
     clickDelete() {
         cy.get(delete_button).click()
     }
-
+    clicksubmitcopy() {
+        cy.get(submitcopy_button).click()
+    }
+    
     clickConfirmdelete() {
         cy.get(confirmdrlete).click()
     }
@@ -130,12 +144,22 @@ export class AddCost {
     clicktype_dropdown() {
         cy.get(type_dropdown).click()
     }
-
-    enterMonth(month: string) {
+    clicknextyear() {
         cy.get(selectMonth_textbox).click()
-        cy.contains(month).click()
+        cy.get(next_year).click()
     }
 
+    enterMonth(monthy: string) {
+        cy.get(selectMonth_textbox).click()
+        cy.contains(monthy).click()
+    }
+    
+
+    enterMonth_copy(month: string) {
+        cy.get(selectMonth_copy).click()
+        cy.contains(month).click()
+    }
+    
     enterYear(year: string) {
         cy.get(selectMonth_textbox).click()
         cy.contains(year).click()
@@ -244,6 +268,15 @@ export class AddCost {
 
     clickPrevious_page_button() {
         cy.get(previous_page_button).click()
+    }
+    validatetext_category(validate: string) {
+        cy.get(Validatetext_subcategory).should('have.text', validate)
+    }
+    validatetext_amountthb1(validate: string) {
+        cy.get(Validatetext_amountthb1).should('contain', validate)
+    }
+    validatetext_amountthb2(validate: string) {
+        cy.get(Validatetext_amountthb2).should('contain', validate)
     }
     validateItem_per_page_button(message: number){
         cy.get('tbody>tr').then(($tbody) => {
