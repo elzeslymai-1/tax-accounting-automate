@@ -1,0 +1,22 @@
+{
+  "name": "tax_accounting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Hello world",
+    "cy:start": "cypress run --record --key bf04dd38-9bd4-4968-8611-dd1fe2f3e6f3 --parallel --browser chrome"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.10.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-xpath": "^2.0.1"
+  }
+}
