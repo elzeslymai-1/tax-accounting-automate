@@ -438,7 +438,7 @@ describe('Creat Cost Test', () => {
         })
 
         //ACT check data copy cost 
-        it('check data copy cost', () => {
+        it('Check data copy cost', () => {
             Addcost.Login()
             Addcost.clickview1()
             //ASSERT
