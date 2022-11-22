@@ -4,11 +4,12 @@ let selectProject_button = '.ant-modal-body > .flex-col > :nth-child(2)'
 let createincomeMenu_button = '[data-menu-id$=cost-management]'
 let add1_button = '//*[@id="control-hooks"]/div/div[8]/button' //xpath
 let submit_button = '.mt-2 > .flex > .ant-btn'
-let view1_button = ':nth-child(4) > :nth-child(2) > span'
+let view1_button = ':nth-child(1) > :nth-child(4) > :nth-child(2)'
 let add_button = '.flex > .ant-btn > span'
 let Add_button = '.flex > .ml-2 > span'
 let submitcopy_button = '.text-xl > .ant-btn > span'
 let delete_button = ':nth-child(1) > :nth-child(8) > .ml-2 > .ant-image > .ant-image-img'
+let delete_button_copy = ':nth-child(1) > :nth-child(4) > :nth-child(3)'
 let confirmdrlete = '.ant-btn-dangerous'
 let next_year = '.ant-picker-header-super-next-btn'
 let selectMonth_textbox = ':nth-child(1) > .flex > .pl-4 > .ant-picker > .ant-picker-input > input'
@@ -128,6 +129,11 @@ export class AddCost {
     clickDelete() {
         cy.get(delete_button).click()
     }
+
+    clickDelete_copy() {
+        cy.get(delete_button_copy).click()
+    }
+
     clicksubmitcopy() {
         cy.get(submitcopy_button).click()
     }
@@ -167,6 +173,12 @@ export class AddCost {
         cy.get(selectMonth_textbox).click()
         cy.contains(year).click()
         cy.contains('2021').click()
+    }
+
+    enterYear_copy(year: string) {
+        cy.get(selectMonth_copy).click()
+        cy.get('.ant-picker-header').eq(1).contains('2022').click()
+        .get('.ant-picker-body').eq(1).contains(year).click()
     }
 
     enterCategory(category: string) {

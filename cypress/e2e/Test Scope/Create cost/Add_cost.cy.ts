@@ -436,7 +436,8 @@ describe('Creat Cost Test', () => {
             Addcost.clickAdd()
             Addcost.enterMonth('Jan')
             cy.wait(500)
-            Addcost.enterMonth_copy('Feb')
+            Addcost.enterYear_copy('2023')
+            Addcost.enterMonth_copy('Jan')
             Addcost.clicksubmitcopy()
             //ASSERT
             Addcost.validateCopy_no_data()
@@ -446,14 +447,13 @@ describe('Creat Cost Test', () => {
         it('copy cost', () => {
             Addcost.Login()
             Addcost.clickAdd()
-            Addcost.enterMonth('Jan')
+            Addcost.enterMonth('Dec')
 
             cy.wait(1000)
-            Addcost.enterMonth_copy('Jan')
+            Addcost.enterMonth_copy('Dec')
             Addcost.clicksubmitcopy()
             //ASSERT
-            Addcost.validateAddincome_success('Tech Cost', 'Platform', 'Daily', 'Test Cypress', '111.00', 'THB', '111.00')
-
+            Addcost.validateAddincome_success('Man Cost', 'Project Owner', 'Annually', 'Test cypress12', '1,200.00', 'THB', '1,200.00')
             Addcost.clickSubmit()
             //ASSERT
             Addcost.validateSuccess('Create cost was successfully')
@@ -464,7 +464,17 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
             Addcost.clickview1()
             //ASSERT
-            Addcost.validateCopy_view("Platform : Test Cypress1","Platform : Test Cypress1", "111.00", "111.00", "222.00")
+            Addcost.validateCopy_view("Project Owner : Test cypress12","Project Owner : Test cypress12", "1,200.00", "1,200.00", "2,400.00")
+        })
+
+        //ACT Clear data copy
+        it('Clear data copy ', () => {
+            Addcost.Login()
+            cy.wait(300)
+            Addcost.clickDelete_copy()
+            Addcost.clickConfirmdelete()
+            cy.wait(500)
+            Addcost.createcost('Dec','Man Cost','Project Owner','Annually','Test cypress12','1200','THB','1200')
         })
 
         //ACT

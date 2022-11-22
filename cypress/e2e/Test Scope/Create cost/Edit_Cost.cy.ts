@@ -12,6 +12,7 @@ describe('Edit Cost Test', () => {
     })
 
     before('setup before test', () => {
+        cy.viewport(1920, 1080)
         //Login
         edit_cost.Login()
     })
