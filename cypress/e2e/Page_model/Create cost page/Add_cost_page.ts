@@ -64,7 +64,7 @@ let Validatetext_subcategory ='.mt-7 > :nth-child(1) > :nth-child(2) > :nth-chil
 let Validatetext_amountthb1 = '.mt-7 > :nth-child(1) > .flex > .font-semibold'
 let Validatetext_amountthb2 = '.text-green'
 
-//Validate Element
+///Validate Element
 let Validate_category = '.w-full > tbody > :nth-child(1) > :nth-child(1) > div'
 let Validate_Subcategory = '.w-full > tbody > :nth-child(1) > :nth-child(2) > div'
 let Validate_categorytype = '.w-full > tbody > :nth-child(1) > :nth-child(3) > div'

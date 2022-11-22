@@ -250,7 +250,7 @@ describe('Edit Cost Test', () => {
         })
 
         //ACT Create cost feature
-        it('Creat cost feature', () => {
+        it('Creat Cost feature', () => {
             edit_cost.Login()
             Addcost.clickAdd()
             Addcost.clicknextyear()
