@@ -12,6 +12,7 @@ describe('Creat income Test', () => {
     })
 
     before('', () => {
+        cy.viewport(1920, 1080)
         //Login
         createincome.Login()
     })
