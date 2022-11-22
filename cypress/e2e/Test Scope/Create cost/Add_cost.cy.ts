@@ -1,22 +1,21 @@
 ///<reference types="cypress" />
 import { createIncrementalCompilerHost } from "typescript"
-import {AddCost} from "../../Page_model/Create cost page/Add_cost_page"
+import { AddCost } from "../../Page_model/Create cost page/Add_cost_page"
 
 const Addcost = new AddCost()
 
 describe('Creat Cost Test', () => {
-    beforeEach('', () => {
-        cy.viewport(1920, 1080)
-        
-    })
+    context('Check Element Create Cost ', () => {
+        beforeEach('', () => {
+            cy.viewport(1920, 1080)
+        })
 
-    before('setup before test', () => {
-        cy.viewport(1920, 1080)
-        //Login
-        Addcost.Login()
-    })
+        before('setup before test', () => {
+            cy.viewport(1920, 1080)
+            //Login
+            Addcost.Login()
+        })
 
-    context('Create Cost ', () => {
         //ACT
         it('Check => Category Type Techcost', () => {
             Addcost.clickAdd()
@@ -179,9 +178,23 @@ describe('Creat Cost Test', () => {
             //assert
             Addcost.validatetype_filter_element('Annually')
         })
+    })
+
+    context('Create Cost Test', () => {
+
+        beforeEach('', () => {
+            cy.viewport(1920, 1080)
+        })
+
+        before('setup before test', () => {
+            cy.viewport(1920, 1080)
+            //Login
+            Addcost.Login()
+        })
 
         //ACT Null Category
         it('Null category', () => {
+            Addcost.clickAdd()
             Addcost.enterItem('Test Cypress')
             Addcost.enterAmount('123456')
             Addcost.enterCurrency('THB')
@@ -284,8 +297,8 @@ describe('Creat Cost Test', () => {
             Addcost.ValidateAmount('0.1111')
         })
 
-         //ACT Null Currency
-         it('Null Currency', () => {
+        //ACT Null Currency
+        it('Null Currency', () => {
             Addcost.clearCurrency()
             Addcost.clickAddbutton()
             ///ASSERT
@@ -293,15 +306,15 @@ describe('Creat Cost Test', () => {
         })
 
         //Act Currency over 4 charector
-        it('Currency over 4 charector', () => {    
+        it('Currency over 4 charector', () => {
             Addcost.enterCurrency('THBath')
             Addcost.clickAddbutton()
             ///ASSERT
             Addcost.validateFailCurrency("'currency' cannot be longer than 4 characters")
         })
 
-         //ACT Null Amount_THB
-         it('Null Amount_THB', () => {
+        //ACT Null Amount_THB
+        it('Null Amount_THB', () => {
             Addcost.clearCurrency()
             Addcost.enterCurrency('THB')
             Addcost.clearAmount_THB()
@@ -413,8 +426,20 @@ describe('Creat Cost Test', () => {
             cy.wait(500)
             Addcost.clickSubmit()
             //ASSERT
-            Addcost.validateAddincome_success('Tech Cost','Platform','Daily','Test Cypress','111.00','THB','111.00')
+            Addcost.validateAddincome_success('Tech Cost', 'Platform', 'Daily', 'Test Cypress', '111.00', 'THB', '111.00')
             Addcost.validateSuccess('Create cost was successfully')
+        })
+
+         //ACT copy cost from no data
+         it('copy cost from no data', () => {
+            Addcost.Login()
+            Addcost.clickAdd()
+            Addcost.enterMonth('Jan')
+            cy.wait(500)
+            Addcost.enterMonth_copy('Feb')
+            Addcost.clicksubmitcopy()
+            //ASSERT
+            Addcost.validateCopy_no_data()
         })
 
         //ACT copy cost 
@@ -422,16 +447,13 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
             Addcost.clickAdd()
             Addcost.enterMonth('Jan')
+
             cy.wait(1000)
             Addcost.enterMonth_copy('Jan')
             Addcost.clicksubmitcopy()
             //ASSERT
-            Addcost.validateAddincome_success('Tech Cost','Platform','Daily','Test Cypress','111.00','THB','111.00')
+            Addcost.validateAddincome_success('Tech Cost', 'Platform', 'Daily', 'Test Cypress', '111.00', 'THB', '111.00')
 
-            
-        })
-        //ACT copy cost submit 
-        it('copy cost submit', () => {
             Addcost.clickSubmit()
             //ASSERT
             Addcost.validateSuccess('Create cost was successfully')
@@ -442,9 +464,7 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
             Addcost.clickview1()
             //ASSERT
-            Addcost.validatetext_category('Platform : Test Cypress1')
-            Addcost.validatetext_amountthb1('111.00')
-            Addcost.validatetext_amountthb2('222.00')
+            Addcost.validateCopy_view("Platform : Test Cypress1","Platform : Test Cypress1", "111.00", "111.00", "222.00")
         })
 
         //ACT
@@ -453,7 +473,7 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
 
             //enter item
-            Addcost.selectItem_per_page_button('10') 
+            Addcost.selectItem_per_page_button('10')
 
             //Assert
             cy.wait(500)
@@ -466,7 +486,7 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
 
             //enter item
-            Addcost.selectItem_per_page_button('15') 
+            Addcost.selectItem_per_page_button('15')
 
             //Assert
             cy.wait(500)
@@ -479,7 +499,7 @@ describe('Creat Cost Test', () => {
             Addcost.Login()
 
             //enter item
-            Addcost.selectItem_per_page_button('20') 
+            Addcost.selectItem_per_page_button('20')
 
             //Assert
             cy.wait(500)
@@ -519,6 +539,5 @@ describe('Creat Cost Test', () => {
 
     })
 })
-
 
 

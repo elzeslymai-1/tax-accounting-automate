@@ -60,9 +60,12 @@ let validateFail_Month = '.go2072408551'
 let validateSuccess = '.go2072408551'
 let Validate_AmountThb = 'tbody > :nth-child(1) > :nth-child(7) > div'
 let Validate_Amount = 'tbody > :nth-child(1) > :nth-child(5) > div'
-let Validatetext_subcategory ='.mt-7 > :nth-child(1) > :nth-child(2) > :nth-child(1)'
-let Validatetext_amountthb1 = '.mt-7 > :nth-child(1) > .flex > .font-semibold'
-let Validatetext_amountthb2 = '.text-green'
+let Validatetext_subcategory1 ='.mt-7 > :nth-child(1) > :nth-child(2) > :nth-child(1)'
+let Validatetext_subcategory2 ='.mt-7 > :nth-child(1) > :nth-child(3) > :nth-child(1)'
+let Validatetext_amountthb1 = '.mt-7 > :nth-child(1) > :nth-child(2) > .font-semibold'
+let Validatetext_amountthb2 = ':nth-child(3) > .font-semibold'
+let Validatetext_amountthb3 = '.text-green'
+
 
 ///Validate Element
 let Validate_category = '.w-full > tbody > :nth-child(1) > :nth-child(1) > div'
@@ -157,7 +160,7 @@ export class AddCost {
 
     enterMonth_copy(month: string) {
         cy.get(selectMonth_copy).click()
-        cy.contains(month).click()
+        cy.get('.ant-picker-body').eq(1).contains(month).click()
     }
     
     enterYear(year: string) {
@@ -269,15 +272,21 @@ export class AddCost {
     clickPrevious_page_button() {
         cy.get(previous_page_button).click()
     }
-    validatetext_category(validate: string) {
-        cy.get(Validatetext_subcategory).should('have.text', validate)
+
+    validateCopy_view(sub1: string,sub2: string,amount1: string,amount2: string,amount3: string, ) {
+        cy.get(Validatetext_subcategory1).should('have.text', sub1)
+        cy.get(Validatetext_subcategory2).should('have.text', sub2)
+        cy.get(Validatetext_amountthb1).should('contain', amount1)
+        cy.get(Validatetext_amountthb2).should('contain', amount2)
+        cy.get(Validatetext_amountthb3).should('contain', amount3)
     }
-    validatetext_amountthb1(validate: string) {
-        cy.get(Validatetext_amountthb1).should('contain', validate)
+
+    validateCopy_no_data() {
+        cy.get('tbody>tr.w-full').then(($tbody) => {
+            expect($tbody.length).to.be.equal(1)
+        })
     }
-    validatetext_amountthb2(validate: string) {
-        cy.get(Validatetext_amountthb2).should('contain', validate)
-    }
+   
     validateItem_per_page_button(message: number){
         cy.get('tbody>tr').then(($tbody) => {
             expect($tbody.length-1).to.equal(message)
