@@ -11,7 +11,7 @@ const ValidateProfit_LossReport = new ValidateProfit_Loss_report()
 
 
 describe('Profit and Loss Report Test', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/login'
+    let base_url = Cypress.env('base_url')
 
     context('Check All Element For Cost Report', () => {
         //Arrange

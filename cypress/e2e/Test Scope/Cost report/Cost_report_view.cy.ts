@@ -6,7 +6,7 @@ const costReport_view = new CostReport_view()
 
 
 describe('Cost Report View Page', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/login'
+    let base_url = Cypress.env('base_url')
 
     context.only('Cost Report View Test', () => {
         //Arrange
@@ -18,7 +18,7 @@ describe('Cost Report View Page', () => {
         before(() => {
             cy.viewport(1920, 1080)
             //login
-            costReport_view.login(base_url)
+            costReport_view.login(Cypress.env('base_url'))
         })
 
         //ACT

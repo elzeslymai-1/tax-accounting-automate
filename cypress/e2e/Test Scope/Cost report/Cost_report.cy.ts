@@ -7,7 +7,7 @@ const validateCostReport = new ValidateCostreport()
 
 
 describe('Cost Report Page', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/login'
+    let base_url = Cypress.env('base_url')
 
     context('Check All Element For Cost Report', () => {
         //Arrange

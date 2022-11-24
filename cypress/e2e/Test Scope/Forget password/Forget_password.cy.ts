@@ -12,7 +12,7 @@ describe('Forget Password Page', () => {
         //Arrange
         before(() => {
             cy.viewport(1920, 1080)
-            forgetPassword.url('https://dev.tax-accounting.finstable.co.th/forgot-password')
+            forgetPassword.url(Cypress.env('forget_password').base_url)
         })
 
         //ACT
@@ -40,7 +40,7 @@ describe('Forget Password Page', () => {
         //Arrange
         beforeEach(() => {
             cy.viewport(1920, 1080)
-            forgetPassword.url('https://dev.tax-accounting.finstable.co.th/forgot-password')
+            forgetPassword.url(Cypress.env('forget_password').base_url)
         })
 
         //ACT

@@ -27,7 +27,7 @@ let Validatetext_amountthb3='.pt-14 > .font-semibold'
 export class view_income {
 
     Login(){
-        loginpage.url('https://dev.tax-accounting.finstable.co.th/login')
+        loginpage.url(Cypress.env('base_url'))
         loginpage.enterUsername('champ_psu@outlook.co.th')
         loginpage.enterPassword('11111111')
         loginpage.clickLogin()

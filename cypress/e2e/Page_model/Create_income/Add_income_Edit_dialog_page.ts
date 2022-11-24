@@ -45,7 +45,7 @@ let Validate_categoryamountthb='.w-full > tbody > :nth-child(1) > :nth-child(7) 
 
 export class Add_income_Edit_dialog {
     Login(){
-        loginpage.url('https://dev.tax-accounting.finstable.co.th/login')
+        loginpage.url(Cypress.env('base_url'))
         loginpage.enterUsername('champ_psu@outlook.co.th')
         loginpage.enterPassword('11111111')
         loginpage.clickLogin()
