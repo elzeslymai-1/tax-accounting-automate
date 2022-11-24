@@ -19,78 +19,42 @@ describe('Creat income Test', () => {
 
     context('Add Create income', () => {
         //ACT
-        it('Check => Category Type HiringCost', () => {
+        it('Check => Category Type Hiring cost', () => {
             createincome.clickAdd()
             //click Category type dropdown
             createincome.clickCategory_type_dropdown()
             cy.wait(500)
             //assert
-            createincome.validatecategory_type_filter_element('HiringCost')
+            createincome.validatecategory_type_filter_element('Hiring cost')
         })
 
         //ACT
-        it('Check => Category Type Dividend', () => {
+        it('Check => Category Type Reserved Portion', () => {
             //click Category type dropdown
             createincome.clickCategory_type_dropdown()
             cy.wait(500)
             //assert
-            createincome.validatecategory_type_filter_element('Dividend')
+            createincome.validatecategory_type_filter_element('Reserved Portion')
         })
 
         //ACT
-        it('Check => Category Type Share', () => {
-            //click Category type dropdown
-            createincome.clickCategory_type_dropdown()
-            cy.wait(500)
-            //assert
-            createincome.validatecategory_type_filter_element('Share')
-        })
-
-        //ACT
-        it('Check => Category Type TransactionFee', () => {
-            //click Category type dropdown
-            createincome.clickCategory_type_dropdown()
-            cy.wait(500)
-            //assert
-            createincome.validatecategory_type_filter_element('TransactionFee')
-        })
-
-        //ACT
-        it('Check => Subcategory Type Plateform', () => {
+        it('Check => Subcategory Type Hiring', () => {
             //click Subcategory type dropdown
             createincome.clickSubcategory_type_dropdown()
             cy.wait(500)
             //assert
-            createincome.validateSubcategory_type_filter_element('Plateform')
+            createincome.validateSubcategory_type_filter_element('Hiring')
         })
 
         //ACT
-        it('Check => Subcategory Type ProjectOwnerCustomer', () => {
+        it('Check => Subcategory Type Share', () => {
             //click Subcategory type dropdown
             createincome.clickSubcategory_type_dropdown()
             cy.wait(500)
             //assert
-            createincome.validateSubcategory_type_filter_element('ProjectOwnerCustomer')
+            createincome.validateSubcategory_type_filter_element('Share')
         })
-
-        //ACT
-        it('Check => Subcategory Type ReservedPortion', () => {
-            //click Subcategory type dropdown
-            createincome.clickSubcategory_type_dropdown()
-            cy.wait(500)
-            //assert
-            createincome.validateSubcategory_type_filter_element('ReservedPortion')
-        })
-
-        //ACT
-        it('Check => Subcategory Type Others', () => {
-            //click Subcategory type dropdown
-            createincome.clickSubcategory_type_dropdown()
-            cy.wait(500)
-            //assert
-            createincome.validateSubcategory_type_filter_element('Others')
-        })
-
+        
         //ACT
         it('Check => Type Onetime', () => {
             //click type dropdown
@@ -141,7 +105,7 @@ describe('Creat income Test', () => {
         //ACT Null Subcategory
         it('Null Subcategory', () => {
             //clear data 
-            createincome.enterCategory('Hiring Cost')
+            createincome.enterCategory('Reserved Portion')
             createincome.clickAddbutton()
 
             ///ASSERT
@@ -150,7 +114,7 @@ describe('Creat income Test', () => {
 
         //ACT3 Null Type
         it('Null Type', () => {
-            createincome.enterSubcategory('Platform')
+            createincome.enterSubcategory('Share')
             createincome.clickAddbutton()
 
             ///ASSERT
@@ -347,8 +311,8 @@ describe('Creat income Test', () => {
             cy.get('.ant-picker-input > input').click();
             cy.get('.ant-picker-header-super-next-btn').click();
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Hiring Cost')
-            createincome.enterSubcategory('Platform')
+            createincome.enterCategory('Reserved Portion')
+            createincome.enterSubcategory('Share')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('123456')
@@ -367,8 +331,8 @@ describe('Creat income Test', () => {
             cy.get('.ant-btn-dangerous').click()
             createincome.clickAdd()
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Hiring Cost')
-            createincome.enterSubcategory('Platform')
+            createincome.enterCategory('Reserved Portion')
+            createincome.enterSubcategory('Share')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('111')
@@ -377,7 +341,7 @@ describe('Creat income Test', () => {
             createincome.clickAddbutton()
             createincome.clickSubmit()
             //ASSERT
-            createincome.validateAddincome_success('Hiring Cost','Platform','Daily','Test Cypress','111.00','THB','111.00')
+            createincome.validateAddincome_success('Reserved Portion','Share','Daily','Test Cypress','111.00','THB','111.00')
             createincome.validateSuccess('Create income was successfully')
         })
 

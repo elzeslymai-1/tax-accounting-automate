@@ -212,8 +212,8 @@ export class IncomeReport_view {
         switch (message) {
             case 'Feb':
                 date = '01 February - 28 February 2022'
-                category1 = 'Hiring Cost'
-                subcategory1 = 'Platform'
+                category1 = 'Reserved Portion'
+                subcategory1 = 'Share'
                 item = 'Test cypress2'
                 amountTHB1 = '222.00'
                 total = '222.00'
@@ -231,10 +231,10 @@ export class IncomeReport_view {
         switch (message) {
             case 'Q2':
                 date = '01 April - 30 June 2022'
-                category1 = 'Dividend'
-                category2 = 'Share'
-                subcategory1 = 'Project Owner (Customer)'
-                subcategory2 = 'Reserved Portion'
+                category1 = 'Reserved Portion'
+                category2 = 'Reserved Portion'
+                subcategory1 = 'Share'
+                subcategory2 = 'Share'
                 amountTHB1 = '444.00'
                 amountTHB2 = '1,221.00'
                 total = '1,665.00'
@@ -254,14 +254,14 @@ export class IncomeReport_view {
         switch (message) {
             case '2022':
                 date = '01 January - 31 December 2022'
-                category1 = 'Dividend'
-                category2 = 'Hiring Cost'
-                category3 = 'Share'
-                category4 = 'Transaction Fee'
-                subcategory1 = 'Project Owner (Customer)'
-                subcategory2 = 'Platform'
-                subcategory3 = 'Reserved Portion'
-                subcategory4 = 'Others'
+                category1 = 'Reserved Portion'
+                category2 = 'Reserved Portion'
+                category3 = 'Reserved Portion'
+                category4 = 'Reserved Portion'
+                subcategory1 = 'Share'
+                subcategory2 = 'Share'
+                subcategory3 = 'Share'
+                subcategory4 = 'Share'
                 amountTHB1 = '777.00'
                 amountTHB2 = '333.00'
                 amountTHB3 = '3,521.00'

@@ -27,8 +27,8 @@ describe('Edit income Edit dialog Test', () => {
             //Enter income Detail
             createincome.clickAdd()
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Hiring Cost')
-            createincome.enterSubcategory('Platform')
+            createincome.enterCategory('Reserved Portion')
+            createincome.enterSubcategory('Share')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('123456')
@@ -37,7 +37,7 @@ describe('Edit income Edit dialog Test', () => {
             createincome.clickAddbutton()
             createincome.clickSubmit()
             //Assert
-            createincome.validateAddincome_success('Hiring Cost','Platform','Daily','Test Cypress','123,456.00','THB','123,456.00')
+            createincome.validateAddincome_success('Reserved Portion','Share','Daily','Test Cypress','123,456.00','THB','123,456.00')
             
         })
 
@@ -215,15 +215,15 @@ describe('Edit income Edit dialog Test', () => {
         it('check Edit', () => {
             Edit_income_Editdialog.clickEdit_button_income()
             Edit_income_Editdialog.clickEditbutton1()
-            Edit_income_Editdialog.enterCategory('Dividend') 
-            Edit_income_Editdialog.enterSubcategory('Project Owner (Customer)')  
+            Edit_income_Editdialog.enterCategory('Hiring cost') 
+            Edit_income_Editdialog.enterSubcategory('Hiring')  
             Edit_income_Editdialog.enterType('Monthly') 
             Edit_income_Editdialog.enterItemclear() 
             Edit_income_Editdialog.enterItem('test')  
             Edit_income_Editdialog.clickUpdatebutton()
             //Assert 
-            Edit_income_Editdialog.ValidateSuccess_Category('Dividend')
-            Edit_income_Editdialog.ValidateSuccess_Subcategory('Project Owner (Customer)')
+            Edit_income_Editdialog.ValidateSuccess_Category('Hiring cost')
+            Edit_income_Editdialog.ValidateSuccess_Subcategory('Hiring')
             Edit_income_Editdialog.ValidateSuccess_Type('Monthly')
             Edit_income_Editdialog.ValidateSuccess_Item('test')
             
