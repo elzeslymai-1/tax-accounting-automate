@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo Hello world",
-    "cy:start": "cypress run --record --key bf04dd38-9bd4-4968-8611-dd1fe2f3e6f3 --parallel --browser chrome"
+    "cy:start": "cypress run --record --key bf04dd38-9bd4-4968-8611-dd1fe2f3e6f3 --parallel --browser chrome",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --browser chrome --headed"
     
   },
   "keywords": [],

@@ -7,8 +7,8 @@ const validateform = new validateFormresetpassword()
 
 
 describe('Reset Password Page', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/reset-password?cft=75790387-a25c-46a6-998c-5b3c7023044d'
-    let expire_url = 'https://dev.tax-accounting.finstable.co.th/reset-password?cft=ab378984-ea69-49f7-9a86-37b39743e0e7'
+    let base_url = Cypress.env('reset_password').valid_url
+    let expire_url = Cypress.env('reset_password').expire_url
     context('Check All Element Reset Password Page', () => {
         //Arrange
         before(() => {

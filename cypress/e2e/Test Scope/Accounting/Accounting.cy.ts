@@ -9,7 +9,7 @@ const loginPage = new LoginPage()
 
 
 describe('Accounting Page', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/login'
+    let base_url = Cypress.env('base_url')
 
     context('Check All Element For Accounting Role', () => {
         //Arrange

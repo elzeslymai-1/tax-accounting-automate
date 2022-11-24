@@ -12,7 +12,7 @@ describe('Login Page', () => {
         //Arrange
         before(() => {
             cy.viewport(1920,1080)
-            loginPage.url('https://dev.tax-accounting.finstable.co.th/login')
+            loginPage.url(Cypress.env('base_url'))
         })
 
         //ACT
@@ -57,7 +57,7 @@ describe('Login Page', () => {
         //Arrange
         beforeEach(() => {
             cy.viewport(1920,1080)
-            loginPage.url('https://dev.tax-accounting.finstable.co.th/login')
+            loginPage.url(Cypress.env('base_url'))
         })
 
         //ACT

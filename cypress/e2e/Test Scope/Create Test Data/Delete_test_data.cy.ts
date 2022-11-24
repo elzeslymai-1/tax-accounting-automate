@@ -22,7 +22,7 @@ context('Delete Test Data', () => {
         cy.viewport(1920, 1080)
 
         //login
-        cy.visit(Cypress.env('base_user'))
+        cy.visit(Cypress.env('base_url'))
         loginPage.enterUsername(Cypress.env('login').super_admin.username)
         loginPage.enterPassword(Cypress.env('login').super_admin.password)
         loginPage.clickLogin()

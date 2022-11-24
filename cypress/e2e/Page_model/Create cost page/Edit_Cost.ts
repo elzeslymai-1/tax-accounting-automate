@@ -8,7 +8,7 @@ let Edit_button = '.p-10 > :nth-child(4) > :nth-child(1)'
 
 export class EditCost {
     Login(){
-        loginpage.url('https://dev.tax-accounting.finstable.co.th/login')
+        loginpage.url(Cypress.env('base_url'))
         loginpage.enterUsername('champ_psu@outlook.co.th')
         loginpage.enterPassword('11111111')
         loginpage.clickLogin()

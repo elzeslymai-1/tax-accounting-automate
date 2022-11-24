@@ -6,7 +6,7 @@ const incomeReport_view = new IncomeReport_view()
 
 
 describe('Income Report View Page', () => {
-    let base_url = 'https://dev.tax-accounting.finstable.co.th/login'
+    let base_url = Cypress.env('base_url')
 
     context('Income Report View Test', () => {
         //Arrange
