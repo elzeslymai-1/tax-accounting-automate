@@ -193,9 +193,8 @@ export class IncomeReport_view {
         switch (message) {
             case 'Jan':
                 date = '01 January - 31 January 2022'
-                category1 = 'Hiring Cost'
-                subcategory1 = 'Platform'
-                item = 'Test Cypress'
+                category1 = 'Reserved Portion'
+                subcategory1 = 'Share : Test cypress'
                 amountTHB1 = '111.00'
                 total = '111.00'
                 break
@@ -203,7 +202,6 @@ export class IncomeReport_view {
         cy.get(validate_view_monthly_date).should('have.text', date)
         cy.xpath(validate_view_monthly_category).should('have.text', category1)
         cy.get(validate_view_monthly_subcategory).should('contain', subcategory1)
-        cy.get(validate_view_monthly_item).should('contain', item)
         cy.get(validate_view_monthly_amountTHB1).should('contain', amountTHB1)
         cy.get(validate_view_monthly_total).should('contain', total)
     }
@@ -214,7 +212,6 @@ export class IncomeReport_view {
                 date = '01 February - 28 February 2022'
                 category1 = 'Reserved Portion'
                 subcategory1 = 'Share'
-                item = 'Test cypress2'
                 amountTHB1 = '222.00'
                 total = '222.00'
                 break
@@ -222,7 +219,6 @@ export class IncomeReport_view {
         cy.get(validate_view_month_date).should('have.text', date)
         cy.xpath(validate_view_month_category).should('have.text', category1)
         cy.get(validate_view_month_subcategory).should('contain', subcategory1)
-        cy.get(validate_view_month_item).should('contain', item)
         cy.get(validate_view_month_amountTHB1).should('contain', amountTHB1)
         cy.get(validate_view_month_total).should('contain', total)
     }
@@ -232,21 +228,21 @@ export class IncomeReport_view {
             case 'Q2':
                 date = '01 April - 30 June 2022'
                 category1 = 'Reserved Portion'
-                category2 = 'Reserved Portion'
+                //category2 = 'Reserved Portion'
                 subcategory1 = 'Share'
-                subcategory2 = 'Share'
-                amountTHB1 = '444.00'
-                amountTHB2 = '1,221.00'
+                //subcategory2 = 'Share'
+                amountTHB1 = '1,665.00'
+                //amountTHB2 = '1,221.00'
                 total = '1,665.00'
                 break
         }
         cy.get(validate_view_quarter_date).should('have.text', date)
         cy.xpath(validate_view_quarter_category1).should('have.text', category1)
-        cy.xpath(validate_view_quarter_category2).should('have.text', category2)
+        //cy.xpath(validate_view_quarter_category2).should('have.text', category2)
         cy.get(validate_view_quarter_subcategory1).should('contain', subcategory1)
-        cy.get(validate_view_quarter_subcategory2).should('contain', subcategory2)
+        //cy.get(validate_view_quarter_subcategory2).should('contain', subcategory2)
         cy.get(validate_view_quarter_amountTHB1).should('contain', amountTHB1)
-        cy.get(validate_view_quarter_amountTHB2).should('contain', amountTHB2)
+        //cy.get(validate_view_quarter_amountTHB2).should('contain', amountTHB2)
         cy.get(validate_view_quarter_total).should('contain', total)
     }
 
@@ -255,34 +251,34 @@ export class IncomeReport_view {
             case '2022':
                 date = '01 January - 31 December 2022'
                 category1 = 'Reserved Portion'
-                category2 = 'Reserved Portion'
-                category3 = 'Reserved Portion'
-                category4 = 'Reserved Portion'
+                //category2 = 'Reserved Portion'
+                //category3 = 'Reserved Portion'
+                //category4 = 'Reserved Portion'
                 subcategory1 = 'Share'
-                subcategory2 = 'Share'
-                subcategory3 = 'Share'
-                subcategory4 = 'Share'
-                amountTHB1 = '777.00'
-                amountTHB2 = '333.00'
-                amountTHB3 = '3,521.00'
-                amountTHB4 = '3,664.00'
+                //subcategory2 = 'Share'
+                //subcategory3 = 'Share'
+                //subcategory4 = 'Share'
+                amountTHB1 = '8,295.00'
+                //amountTHB2 = '333.00'
+                //amountTHB3 = '3,521.00'
+                //amountTHB4 = '3,664.00'
                 total = '8,295.00'
                 break
         }
 
         cy.get(validate_view_year_date).should('have.text', date)
         cy.xpath(validate_view_year_category1).should('have.text', category1)
-        cy.xpath(validate_view_year_category2).should('have.text', category2)
-        cy.xpath(validate_view_year_category3).should('have.text', category3)
-        cy.xpath(validate_view_year_category4).should('have.text', category4)
+        //cy.xpath(validate_view_year_category2).should('have.text', category2)
+        //cy.xpath(validate_view_year_category3).should('have.text', category3)
+        //cy.xpath(validate_view_year_category4).should('have.text', category4)
         cy.get(validate_view_year_subcategory1).should('contain', subcategory1)
-        cy.get(validate_view_year_subcategory2).should('contain', subcategory2)
-        cy.get(validate_view_year_subcategory3).should('contain', subcategory3)
-        cy.get(validate_view_year_subcategory4).should('contain', subcategory4)
+        //cy.get(validate_view_year_subcategory2).should('contain', subcategory2)
+        //cy.get(validate_view_year_subcategory3).should('contain', subcategory3)
+        //cy.get(validate_view_year_subcategory4).should('contain', subcategory4)
         cy.get(validate_view_year_amountTHB1).should('contain', amountTHB1)
-        cy.get(validate_view_year_amountTHB2).should('contain', amountTHB2)
-        cy.get(validate_view_year_amountTHB3).should('contain', amountTHB3)
-        cy.get(validate_view_year_amountTHB4).should('contain', amountTHB4)
+        //cy.get(validate_view_year_amountTHB2).should('contain', amountTHB2)
+        //cy.get(validate_view_year_amountTHB3).should('contain', amountTHB3)
+        //cy.get(validate_view_year_amountTHB4).should('contain', amountTHB4)
         cy.get(validate_view_year_total).should('contain', total)
     }
 
