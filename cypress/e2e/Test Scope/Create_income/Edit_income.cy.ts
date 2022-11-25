@@ -23,8 +23,8 @@ describe('Edit income Test', () => {
         it('Add income success', () => {
             createincome.clickAdd()
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Reserved Portion')
-            createincome.enterSubcategory('Share')
+            createincome.enterCategory('Hiring Cost')
+            createincome.enterSubcategory('Platform')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('123456')
@@ -33,7 +33,7 @@ describe('Edit income Test', () => {
             createincome.clickAddbutton()
             createincome.clickSubmit()
             //ASSERT
-            createincome.validateAddincome_success('Reserved Portion','Share','Daily','Test Cypress','123,456.00','THB','123,456.00')
+            createincome.validateAddincome_success('Hiring Cost','Platform','Daily','Test Cypress','123,456.00','THB','123,456.00')
             createincome.validateSuccess('Create income was successfully')
             createincome.clickDelete()
             createincome.clickConfirmdelete()
@@ -58,7 +58,7 @@ describe('Edit income Test', () => {
         
         //ACT Null Subcategory
         it('Null Subcategory', () => {
-            createincome.enterCategory('Reserved Portion')
+            createincome.enterCategory('Hiring Cost')
             createincome.clickAddbutton()
 
             ///ASSERT
@@ -67,7 +67,7 @@ describe('Edit income Test', () => {
 
         //ACT3 Null Type
         it('Null Type', () => {
-            createincome.enterSubcategory('Share')
+            createincome.enterSubcategory('Platform')
             createincome.clickAddbutton()
 
             ///ASSERT
@@ -258,8 +258,8 @@ describe('Edit income Test', () => {
             cy.get('.ant-picker-input > input').click();
             cy.get('.ant-picker-header-super-next-btn').click();
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Reserved Portion')
-            createincome.enterSubcategory('Share')
+            createincome.enterCategory('Hiring Cost')
+            createincome.enterSubcategory('Platform')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('123456')
