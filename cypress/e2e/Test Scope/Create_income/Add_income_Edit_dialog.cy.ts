@@ -27,8 +27,8 @@ describe('Add income Editdialog Test', () => {
         it('Add income success', () => {
             createincome.clickAdd()
             createincome.enterMonth('Jan')
-            createincome.enterCategory('Reserved Portion')
-            createincome.enterSubcategory('Share')
+            createincome.enterCategory('Hiring Cost')
+            createincome.enterSubcategory('Platform')
             createincome.enterType('Daily')
             createincome.enterItem('Test Cypress')
             createincome.enterAmount('123456')
@@ -36,7 +36,7 @@ describe('Add income Editdialog Test', () => {
             createincome.enterAmount_THB('123456')
             createincome.clickAddbutton()
             //ASSERT
-            createincome.validateAddincome_success('Reserved Portion','Share','Daily','Test Cypress','123,456.00','THB','123,456.00')
+            createincome.validateAddincome_success('Hiring Cost','Platform','Daily','Test Cypress','123,456.00','THB','123,456.00')
         })
         
         //ACT Null Item
@@ -208,15 +208,15 @@ describe('Add income Editdialog Test', () => {
         //check Edit
         it('check Edit', () => {
             Add_income_Editdialog.clickEditbutton1()
-            Add_income_Editdialog.enterCategory('Hiring cost') 
-            Add_income_Editdialog.enterSubcategory('Hiring')  
+            Add_income_Editdialog.enterCategory('Dividend') 
+            Add_income_Editdialog.enterSubcategory('Project Owner (Customer)')  
             Add_income_Editdialog.enterType('Monthly') 
             Add_income_Editdialog.enterItemclear() 
             Add_income_Editdialog.enterItem('test')  
             Add_income_Editdialog.clickUpdatebutton()
             //Assert 
-            Add_income_Editdialog.ValidateSuccess_Category('Hiring cost')
-            Add_income_Editdialog.ValidateSuccess_Subcategory('Hiring')
+            Add_income_Editdialog.ValidateSuccess_Category('Dividend')
+            Add_income_Editdialog.ValidateSuccess_Subcategory('Project Owner (Customer)')
             Add_income_Editdialog.ValidateSuccess_Type('Monthly')
             Add_income_Editdialog.ValidateSuccess_Item('test')
 

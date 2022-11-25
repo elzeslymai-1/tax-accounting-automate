@@ -53,7 +53,7 @@ context('Create Cost Data', () => {
         addCost.createcost('Dec','Man Cost','Project Owner','Annually','Test cypress12','1200','THB','1200')
         cy.wait(2000)
         //2021
-        addCost.createcost_before('Jan','Tech Cost','Smart Contract','One-time','Test cypress1','111','THB','111')
+        addCost.createcost_before('Jan','Tech Cost','Platform','One-time','Test cypress1','111','THB','111')
         cy.wait(2000)
         addCost.createcost_before('Feb','Tech Cost','Smart Contract','Daily','Test cypress2','222','THB','222')
         cy.wait(2000)

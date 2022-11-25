@@ -21,8 +21,8 @@ let Validate_categoryamount = '.p-10 > :nth-child(5) > div'
 let Validate_categorycurrency = '.p-10 > :nth-child(6) > div'
 let Validate_categoryamountthb = '.p-10 > :nth-child(7) > div'
 let Validatetext_income= '.text-xl'
-let Validatetext_amountthb1='.mt-7 > :nth-child(1) > :nth-child(2) > .font-semibold'
-let Validatetext_amountthb2=':nth-child(3) > .font-semibold'
+let Validatetext_amountthb1='.mt-7 > :nth-child(1) > .flex > .font-semibold'
+let Validatetext_amountthb2=':nth-child(2) > .flex > .font-semibold'
 let Validatetext_amountthb3='.pt-14 > .font-semibold'
 export class view_income {
 

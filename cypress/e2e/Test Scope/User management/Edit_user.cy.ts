@@ -266,7 +266,7 @@ describe('Add User Page', () => {
         it('Check Show Project', () => {
 
             //Assert
-            editUser.validateShowProject('Tax and Accounting')
+            editUser.validateShowProject('Accounting')
         })
 
         //ACT

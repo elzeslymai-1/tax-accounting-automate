@@ -12,7 +12,6 @@ let Edit_button1 =':nth-child(1) > :nth-child(8) > .py-0 > .ant-image > .ant-ima
 let Edit_button_income = '.p-10 > :nth-child(4) > :nth-child(1)'
 let category_textbox = '#control-hooks2 > :nth-child(1) > :nth-child(1) > .ant-form-item > .ant-row > .ant-col-16 > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item'
 let subcategory_textbox ='#control-hooks2 > :nth-child(1) > :nth-child(2) > .ant-form-item > .ant-row > .ant-col-16 > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item'
-let subcategory_textbox1 =':nth-child(6) > :nth-child(1) > .ant-select-dropdown > :nth-child(1) > .rc-virtual-list > .rc-virtual-list-holder > :nth-child(1) > .rc-virtual-list-holder-inner > .ant-select-item > .ant-select-item-option-content'
 let type_textbox ='#control-hooks2 > :nth-child(1) > :nth-child(3) > .ant-form-item > .ant-row > .ant-col-16 > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item'
 let item_textbox2 = '#control-hooks2_item'
 let Amount_textbox2 = '#control-hooks2_amount'

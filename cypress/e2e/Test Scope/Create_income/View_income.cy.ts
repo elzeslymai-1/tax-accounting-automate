@@ -21,9 +21,9 @@ describe('View Income ', () => {
         
         //ACT Add income success 
         it('View Income', () => {
-            createincome.createIncome('Jan','Reserved Portion','Share','Daily','Test cypress3','123456','THB','123456')
+            createincome.createIncome('Jan','Dividend','Project Owner (Customer)','Daily','Test cypress3','123456','THB','123456')
             cy.wait(2000)
-            createincome.createIncome('Jan','Reserved Portion','Share','Daily','Test cypress2','12345','THB','12345')
+            createincome.createIncome('Jan','Hiring Cost','Platform','Daily','Test cypress2','12345','THB','12345')
             cy.wait(2000)
             viewincome.clickView_button()
             //ASSET
