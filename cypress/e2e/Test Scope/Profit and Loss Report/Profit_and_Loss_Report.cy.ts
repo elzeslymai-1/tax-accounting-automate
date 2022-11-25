@@ -13,7 +13,7 @@ const ValidateProfit_LossReport = new ValidateProfit_Loss_report()
 describe('Profit and Loss Report Test', () => {
     let base_url = Cypress.env('base_url')
 
-    context.skip('Check All Element For Cost Report', () => {
+    context('Check All Element For Cost Report', () => {
         //Arrange
 
         //set resolution
